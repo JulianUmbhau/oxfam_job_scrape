@@ -21,4 +21,12 @@ for page in page_list:
     results = result.find_all("h3", class_="pb-1")
     for result_i in results:
         print(result_i.text)
+        job_list.append(result_i.text)
 
+search_terms = ["data","engineer","scientist","science"]
+
+data_jobs_list = []
+for job in job_list:
+    if any(xs in job for xs in search_terms):
+        data_jobs_list.append(job)
+        print("Data job found")
